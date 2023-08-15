@@ -54,7 +54,7 @@ $diffFiles = (string)shell_exec(sprintf(
     escapeshellarg($baseBranch),
     escapeshellarg($headBranch)
 ));
-$diffFiles = explode(PHP_EOL, trim($diffFiles));
+$diffFiles = array_filter(explode(PHP_EOL, $diffFiles));
 if ($diffFiles) {
     println('### non-PHP Files');
     $header = ['filename', 'status'];
@@ -66,7 +66,7 @@ if ($diffFiles) {
 }
 
 println('### PHP Files');
-$phpDiffFiles = explode(PHP_EOL, trim($phpDiffFiles));
+$phpDiffFiles = array_filter(explode(PHP_EOL, trim($phpDiffFiles)));
 
 $hashMap = [];
 foreach ($phpDiffFiles as $diffFile) {
