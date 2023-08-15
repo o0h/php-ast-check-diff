@@ -1,4 +1,4 @@
 <?php
 
 /** @var $hello */
-ecoh 'Hello';
+echo 'Hello';
