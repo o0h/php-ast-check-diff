@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+use O0h\PhpAstCheckDiff\Command\EchoHashCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new EchoHashCommand());
+$application->run();
