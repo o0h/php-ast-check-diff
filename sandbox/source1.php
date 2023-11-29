@@ -50,7 +50,7 @@ class Manager
         if (count($this->connections) === 0) {
             throw new RuntimeException('接続情報が作成されていません');
         }
-        if (is_null($name)) {
+        if ($name === null) {
             return current($this->connections);
         }
 
