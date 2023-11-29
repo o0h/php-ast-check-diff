@@ -3,13 +3,13 @@
     "type": "library",
     "require": {
         "php": ">8.2",
-        "nikic/php-parser": "^4.16"
+        "nikic/php-parser": "^4.16",
+        "symfony/console": "^6.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "@stable",
         "phpstan/phpstan": "@stable",
-        "phpunit/phpunit": "^10.3",
-        "symfony/console": "^6.3"
+        "phpunit/phpunit": "^10.3"
     },
     "license": "MIT",
     "autoload": {
