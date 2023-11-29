@@ -1,0 +1,21 @@
+name: "/ast-diff-check"
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  manual_plan:
+    name: "manual plan"
+    if: contains(github.event.comment.html_url, '/pull/') && startsWith(github.event.comment.body, '@ast-diff-check')
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: echo message
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "ちぇけちぇけ〜〜"
+            })
