@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfcf2440667e4f4e916e6b037bb0d0fa",
+    "content-hash": "fcb91b1cbda255a2ae82f3e7caab3a12",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -3621,8 +3621,10 @@
     "stability-flags": {
         "symfony/polyfill-php83": 0,
         "friendsofphp/php-cs-fixer": 0,
+        "phpstan/extension-installer": 0,
         "phpstan/phpstan": 0,
-        "phpstan/phpstan-phpunit": 0
+        "phpstan/phpstan-phpunit": 0,
+        "phpunit/phpunit": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,
