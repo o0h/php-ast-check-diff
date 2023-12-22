@@ -1,5 +1,5 @@
 {
-    "name": "o0h/php-ast-check-diff",
+    "name": "o0h/ast-check-diff",
     "type": "library",
     "require": {
         "php": ">8.2",
