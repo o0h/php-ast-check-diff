@@ -15,7 +15,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-#[AsCommand(name: 'ast-diff-check')]
+#[AsCommand(name: 'check')]
 final class AstDiffCheck extends Command
 {
     private DiffCollector $diffCollector;

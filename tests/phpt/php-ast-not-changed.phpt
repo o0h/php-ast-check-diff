@@ -2,7 +2,7 @@
 With PHP AST-Non-Changed file is commited.
 
 --ARGS--
-ast-diff-check --base e7844dc6 --head cd2f816
+check --base e7844dc6 --head cd2f816
 
 --FILE--
 <?php

@@ -2,7 +2,7 @@
 With PHP AST-Changed file is commited.
 
 --ARGS--
-ast-diff-check --base bb6f6 --head cd2f8
+check --base bb6f6 --head cd2f8
 
 --FILE--
 <?php

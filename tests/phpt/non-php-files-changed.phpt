@@ -2,7 +2,7 @@
 With non-PHP Files changed.
 
 --ARGS--
-ast-diff-check --base bb6f65e9 --head 4abb01cf
+check --base bb6f65e9 --head 4abb01cf
 
 --FILE--
 <?php
