@@ -1,0 +1,66 @@
+name: php-ast check diff
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  php_ast_check_diff:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    if: contains(github.event.comment.body, '/php-ast-check-diff')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get PR details
+        id: pr-details
+        uses: actions/github-script@v6
+        with:
+          result-encoding: string
+          script: |
+            const issue_number = context.issue.number;
+            const {data: pr} = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: issue_number,
+            });
+            const result = { baseCommit: pr.base.sha, headCommit: pr.head.sha };
+            return JSON.stringify(result);
+
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Composer Install
+        run: composer install
+
+      - name: Run AST diff check
+        id: diff
+        run: |
+          PR_DETAILS=$(echo '${{ steps.pr-details.outputs.result }}' | jq -r .)
+          BASE_COMMIT=$(echo $PR_DETAILS | jq -r .baseCommit)
+          HEAD_COMMIT=$(echo $PR_DETAILS | jq -r .headCommit)
+          {
+            echo 'DIFF_CHECK_RESULT<<EOF'
+            bin/command ast-diff-check --base $BASE_COMMIT --head $HEAD_COMMIT
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Comment PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `${{ steps.diff.outputs.DIFF_CHECK_RESULT }}`
+            })
