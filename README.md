@@ -1,4 +1,6 @@
 # PHP AST Check Diff Tool
+[![phpunit](https://github.com/o0h/php-ast-check-diff/actions/workflows/phpunit.yml/badge.svg)](https://github.com/o0h/php-ast-check-diff/actions/workflows/phpunit.yml)
+[![codecov](https://codecov.io/gh/o0h/php-ast-check-diff/graph/badge.svg?token=hxtB6lwmK5)](https://codecov.io/gh/o0h/php-ast-check-diff)
 
 ## Overview
 
