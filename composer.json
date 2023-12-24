@@ -1,6 +1,7 @@
 {
     "name": "o0h/ast-check-diff",
     "type": "library",
+    "description": "AST-based PHP source diff checker",
     "require": {
         "php": ">8.2",
         "nikic/php-parser": "^4.16",
