@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace O0h\PhpAstCheckDiff;
+namespace O0h\PhpAstCheckDiff\Console\Command;
 
 use O0h\PhpAstCheckDiff\Differ\DiffCollector;
 use O0h\PhpAstCheckDiff\Differ\DiffFactory;
@@ -16,7 +16,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(name: 'check')]
-final class AstDiffCheck extends Command
+final class AstDiffCheckCommand extends Command
 {
     private DiffCollector $diffCollector;
     private Presenter $presenter;

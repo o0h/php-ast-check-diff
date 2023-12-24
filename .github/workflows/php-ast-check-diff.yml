@@ -50,7 +50,7 @@ jobs:
           HEAD_COMMIT=$(echo $PR_DETAILS | jq -r .headCommit)
           {
             echo 'DIFF_CHECK_RESULT<<EOF'
-            bin/command check --base $BASE_COMMIT --head $HEAD_COMMIT
+            bin/ast-check-diff check --base $BASE_COMMIT --head $HEAD_COMMIT
             echo EOF
           } >> "$GITHUB_OUTPUT"
 

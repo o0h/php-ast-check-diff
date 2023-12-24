@@ -1,0 +1,8 @@
+#!/usr/bin/env php
+<?php
+
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
+
+use O0h\PhpAstCheckDiff\Console\Application;
+
+(new Application())->run();

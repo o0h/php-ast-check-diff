@@ -17,8 +17,8 @@
             <directory>src</directory>
         </include>
         <exclude>
+            <directory>src/Console</directory>
             <directory>src/Value</directory>
-            <file>src/AstDiffCheck.php</file>
         </exclude>
     </source>
     <testsuites>
