@@ -42,6 +42,9 @@
             "email": "dev@o0h.in"
         }
     ],
+    "bin": [
+      "bin/ast-check-diff"
+    ],
     "config": {
         "sort-packages": true,
         "allow-plugins": {
