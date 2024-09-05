@@ -18,7 +18,7 @@ final class Git implements GitInterface
     {
         $gitInstalled = $this->shellExec('which git');
         if (!$gitInstalled) {
-            throw new \RuntimeException('git command is not installed');
+            throw new \RuntimeException('the git command is not installed');
         }
     }
 
