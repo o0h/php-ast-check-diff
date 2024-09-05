@@ -4,7 +4,7 @@
     "description": "AST-based PHP source diff checker",
     "require": {
         "php": "~8.3.0",
-        "nikic/php-parser": "^4.16",
+        "nikic/php-parser": "^v5.1.0",
         "symfony/console": "^6.3"
     },
     "require-dev": {
