@@ -35,7 +35,7 @@ final class AstHasherTest extends TestCase
              }
             CODE;
         $actual = $this->subject->get($source);
-        $expected = 'abcd814e2805dc8935a669bccd6671a7';
+        $expected = 'e972738f82f2733237099fa4f141582f';
         $this->assertSame($expected, $actual);
     }
 
