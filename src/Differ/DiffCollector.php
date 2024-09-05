@@ -9,7 +9,7 @@ use O0h\PhpAstCheckDiff\Value\AstDiff;
 use O0h\PhpAstCheckDiff\Value\Diff;
 
 /**
- * @phpstan-type  commit array{hash: string, message: string}
+ * @phpstan-type commit array{hash: string, message: string}
  */
 class DiffCollector
 {
