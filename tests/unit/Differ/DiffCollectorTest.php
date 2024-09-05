@@ -33,7 +33,7 @@ final class DiffCollectorTest extends TestCase
 
     public function testInitializeInvalidCommitHash(): void
     {
-        $git = new class () extends DummyGit {
+        $git = new class extends DummyGit {
             public function verifyCommit(string $commitHash): bool
             {
                 return false;
@@ -51,7 +51,7 @@ final class DiffCollectorTest extends TestCase
      */
     public function testGetCommits(): void
     {
-        $git = new class () extends DummyGit {
+        $git = new class extends DummyGit {
             public function getCommitLog(string $commitHash): string
             {
                 $commits = [
@@ -84,7 +84,7 @@ final class DiffCollectorTest extends TestCase
 
     public function testGetPhpDiffs(): void
     {
-        $git = new class () extends DummyGit {
+        $git = new class extends DummyGit {
             public function getDiffFiles(string $baseCommit, string $headCommit): array
             {
                 return [
@@ -137,7 +137,7 @@ final class DiffCollectorTest extends TestCase
 
     public static function getPhpDiffsAstChangedProvider(): \Generator
     {
-        $git = new class () extends DummyGit {
+        $git = new class extends DummyGit {
             public function getDiffFiles(string $baseCommit, string $headCommit): array
             {
                 return
@@ -184,7 +184,7 @@ final class DiffCollectorTest extends TestCase
 
     public function testGetNonPhpDiffs(): void
     {
-        $git = new class () extends DummyGit {
+        $git = new class extends DummyGit {
             public function getDiffFiles(string $baseCommit, string $headCommit): array
             {
                 return

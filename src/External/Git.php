@@ -25,7 +25,7 @@ final class Git implements GitInterface
     #[\Override]
     public function verifyCommit(string $commitHash): bool
     {
-        $verifyBranch = shell_exec(sprintf(
+        $verifyBranch = shell_exec(\sprintf(
             'git rev-parse --verify -q %s',
             escapeshellarg($commitHash)
         ));
@@ -39,7 +39,7 @@ final class Git implements GitInterface
     #[\Override]
     public function getCommitLog(string $commitHash): string
     {
-        return (string)shell_exec(sprintf(
+        return (string)shell_exec(\sprintf(
             'git log --pretty=oneline -n 1 %s',
             escapeshellarg($commitHash)
         ));
@@ -48,7 +48,7 @@ final class Git implements GitInterface
     #[\Override]
     public function getDiffFiles($baseCommit, $headCommit): array
     {
-        $diff = shell_exec(sprintf(
+        $diff = shell_exec(\sprintf(
             'git --no-pager diff --name-status %s..%s',
             escapeshellarg($baseCommit),
             escapeshellarg($headCommit),
@@ -99,7 +99,7 @@ final class Git implements GitInterface
                 static fn($arg): string => str_starts_with($arg, $px) ? substr($arg, \strlen($px)) : escapeshellarg($arg),
                 $args
             );
-            $externalCommand = sprintf($externalCommand, ...$args);
+            $externalCommand = \sprintf($externalCommand, ...$args);
         }
 
         return shell_exec($externalCommand);

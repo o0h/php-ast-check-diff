@@ -21,7 +21,7 @@ final class AstDiffCheckCommand extends Command
     private DiffCollector $diffCollector;
     private Presenter $presenter;
 
-    public function __construct(string $name = null)
+    public function __construct(?string $name = null)
     {
         parent::__construct($name);
 

@@ -36,13 +36,13 @@ final class DiffFactoryTest extends TestCase
     #[DataProvider('createForPhpProvider')]
     public function testCreateForPhp(GitStatus $gitStatus, ?string $expectedBase, ?string $expectedHead): void
     {
-        $git = new class () extends DummyGit {
+        $git = new class extends DummyGit {
             public function getSource(string $commitHash, string $path): string
             {
                 return "<?php \$hash = '{$commitHash}'; \$path = '{$path}';";
             }
         };
-        $astHasher = new class () extends DummyAstHasher {
+        $astHasher = new class extends DummyAstHasher {
             public function get(string $source): string
             {
                 return $source;

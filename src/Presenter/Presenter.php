@@ -37,7 +37,7 @@ final class Presenter
      */
     public function processMetaContents(array $commits): void
     {
-        $this->putln(sprintf('# Check diff between %s...%s', $commits['base']['hash'], $commits['head']['hash']));
+        $this->putln(\sprintf('# Check diff between %s...%s', $commits['base']['hash'], $commits['head']['hash']));
         $this->put(\PHP_EOL);
 
         $helper = new MarkdownTableHelper();
