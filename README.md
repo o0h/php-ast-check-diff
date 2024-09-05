@@ -42,7 +42,7 @@ examples:
 - `vendor/bin/ast-check-diff check ast-diff-check --base HEAD@{3} --head HEAD~` : These comparisons are made by specifying pointers.
 - `vendor/bin/ast-check-diff check ast-diff-check --base cd2f816 --head 1a89b0c` : These comparisons are made by specifying specific commits.
 ## Notes
-- This tool is intended for use with the latest PHP environments(8.3 or 8.2+).
+- This tool is intended for use with the latest PHP environments(8.3).
 - Includes composer.lock: The project includes a composer.lock file.
 
 Due to the above points, it is recommended to use this tool in isolated environments such as containers or on Continuous Integration (CI) platforms, rather than directly requiring it in your project.
