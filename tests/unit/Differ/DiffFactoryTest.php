@@ -7,7 +7,6 @@ namespace O0h\PhpAstCheckDiff\Test\Case\Differ;
 use O0h\PhpAstCheckDiff\Differ\DiffFactory;
 use O0h\PhpAstCheckDiff\Differ\Port\AstHasherInterface;
 use O0h\PhpAstCheckDiff\Differ\Port\GitInterface;
-use O0h\PhpAstCheckDiff\Value\Diff;
 use O0h\PhpAstCheckDiff\Value\GitStatus;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -28,7 +27,6 @@ final class DiffFactoryTest extends TestCase
 
         $diff = $subject->createForNonPhp($path, $status);
 
-        $this->assertInstanceOf(Diff::class, $diff);
         $this->assertSame($path, $diff->path);
         $this->assertSame($status, $diff->status);
     }

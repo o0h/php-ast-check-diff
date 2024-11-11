@@ -80,7 +80,7 @@ class DiffCollector
     /**
      * Get the non-PHP diffs.
      *
-     * @return array<Diff> the array of non-PHP diffs
+     * @return list<Diff> the array of non-PHP diffs
      */
     public function getNonPhpDiffs(): array
     {
