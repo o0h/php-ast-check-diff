@@ -124,7 +124,7 @@ final class DiffCollectorTest extends TestCase
      * @param bool $includeNonAstChanged whether to include non AST-changed PhpDiffs
      * @param GitInterface $git the GitInterface instance
      */
-    #[DataProvider('getPhpDiffsAstChangedProvider')]
+    #[DataProvider('provideGetPhpDiffsAstChangedCases')]
     public function testGetPhpDiffsAstChanged(int $expectCount, bool $includeNonAstChanged, GitInterface $git, DiffFactory $diffFactory): void
     {
         $subject = $this->getSubject(git: $git, diffFactory: $diffFactory);
@@ -135,7 +135,7 @@ final class DiffCollectorTest extends TestCase
         $this->assertCount($expectCount, $actual);
     }
 
-    public static function getPhpDiffsAstChangedProvider(): \Generator
+    public static function provideGetPhpDiffsAstChangedCases(): iterable
     {
         $git = new class extends DummyGit {
             public function getDiffFiles(string $baseCommit, string $headCommit): array

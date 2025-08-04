@@ -31,7 +31,7 @@ final class DiffFactoryTest extends TestCase
         $this->assertSame($status, $diff->status);
     }
 
-    #[DataProvider('createForPhpProvider')]
+    #[DataProvider('provideCreateForPhpCases')]
     public function testCreateForPhp(GitStatus $gitStatus, ?string $expectedBase, ?string $expectedHead): void
     {
         $git = new class extends DummyGit {
@@ -56,7 +56,7 @@ final class DiffFactoryTest extends TestCase
         $this->assertSame($expectedHead, $actual->head);
     }
 
-    public static function createForPhpProvider(): \Generator
+    public static function provideCreateForPhpCases(): iterable
     {
         yield 'ADDED' => [GitStatus::ADDED, null, '<?php $hash = \'commit2\'; $path = \'a.php\';'];
 
