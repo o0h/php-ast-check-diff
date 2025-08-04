@@ -56,6 +56,9 @@ final class DiffFactoryTest extends TestCase
         $this->assertSame($expectedHead, $actual->head);
     }
 
+    /**
+     * @return iterable<array{GitStatus, ?string, ?string}>
+     */
     public static function provideCreateForPhpCases(): iterable
     {
         yield 'ADDED' => [GitStatus::ADDED, null, '<?php $hash = \'commit2\'; $path = \'a.php\';'];

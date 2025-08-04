@@ -135,6 +135,9 @@ final class DiffCollectorTest extends TestCase
         $this->assertCount($expectCount, $actual);
     }
 
+    /**
+     * @return iterable<array{int, bool, GitInterface, DiffFactory}>
+     */
     public static function provideGetPhpDiffsAstChangedCases(): iterable
     {
         $git = new class extends DummyGit {
