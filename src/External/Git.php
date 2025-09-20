@@ -91,7 +91,7 @@ final class Git implements GitInterface
      *
      * @return null|false|string returns the output of the shell command as a string, or null if it fails
      */
-    private function shellExec(string $externalCommand, string ...$args): null|false|string
+    private function shellExec(string $externalCommand, string ...$args): false|string|null
     {
         if ($args) {
             $px = self::UNESCAPE_SHELL_ARG_PREFIX;
