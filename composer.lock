@@ -4540,7 +4540,7 @@
     "stability-flags": {
         "friendsofphp/php-cs-fixer": 0,
         "phpstan/extension-installer": 0,
-        "phpstan/phpstan": 0,
+        "phpstan/phpstan-phpunit": 0,
         "phpunit/phpunit": 0
     },
     "prefer-stable": false,
